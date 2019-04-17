@@ -41,7 +41,7 @@ Napisz w języku SQL zapytania wyświetlające następujące informacje z bazy d
 	select z.id_zam, p.cena_pudelka 
 	from czek.zamowienia z join czek.szczegolowe_zam sz on z.id_zam = sz.id_zam 
 	join czek.pudelka p on czek.sz.id_pudelka = p.id_pudelka 
-	where p.cena_pudelka = (select min(cena_pudelka) from czek.pudelka);
+	where p.cena_pudelka = (select min(p.cena_pudelka) from czek.pudelka);
 	
 	h) nazwy i koszt czekoladek oraz rodzaj czekolady, dla najdroższych czekoladek z każdego rodzaju czekolady,
 	select nazwa as 'Nazwa czekoladek', koszt as 'Koszt najdroższych czekoladek danego rodzaju', rodzaj_czekolady as 'Rodzaj czekolady'
